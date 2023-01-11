@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import DayListItem from "components/DayListItem";
 import DayList from "components/DayList";
@@ -174,4 +174,10 @@ storiesOf("Appointment", module)
       onSave={action("onSave")}
       onCancel={action("onCancel")}
     />
+  ))
+  .add("Appointment Empty", () => (
+    <Fragment>
+      <Appointment id={1} time="4pm" />
+      <Appointment time="5pm" />
+    </Fragment>
   ));

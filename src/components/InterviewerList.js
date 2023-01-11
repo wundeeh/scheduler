@@ -6,6 +6,7 @@ import "components/InterviewerList.scss";
 export default function InterviewerList(props) {
 
   const interviewersArr = props.interviewers;
+  const { value, onChange } = props;
 
   return (
     <section className="interviewers">

@@ -24,3 +24,17 @@ export function getInterview(state, interview) {
   }
   return obj;
 }
+
+export function getInterviewersForDay(state, day) {
+  const output = [];
+  for (const elem of state.days) {
+    if (elem.name === day) {
+      for (const appt of elem.interviewers) {
+        if (state.interviewers[appt]) {
+          output.push(state.interviewers[appt]);
+        }
+      }
+    }
+  }
+  return output;
+}

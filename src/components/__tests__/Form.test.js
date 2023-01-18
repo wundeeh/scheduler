@@ -28,7 +28,6 @@ describe("Form", () => {
       <Form interviewers={interviewers} student="Lydia Miller-Jones" />
     );
 
-    // console.log("test====", getByTestId("student-name-input"));
     expect(getByTestId("student-name-input")).toHaveValue("Lydia Miller-Jones");
   });
 

@@ -34,9 +34,7 @@ export default function useApplicationData() {
       [id]: appointment,
     };
 
-    // console.log("state====", state);
     const days = updateSpots(appointments);
-    // console.log("days====", days);
 
     return axios.put(`/api/appointments/${id}`, { interview }).then(() => {
       setState({
@@ -64,7 +62,7 @@ export default function useApplicationData() {
       setState({
         ...state,
         appointments,
-        days
+        days,
       });
     });
   }
@@ -75,7 +73,6 @@ export default function useApplicationData() {
       axios.get("/api/appointments"),
       axios.get("/api/interviewers"),
     ]).then((all) => {
-      // console.log(all);
       setState((prev) => ({
         ...prev,
         days: all[0].data,

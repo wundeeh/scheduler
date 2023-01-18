@@ -25,3 +25,11 @@ npm run storybook
 ## Version 1.0
 
 This is the (hopefully) fully completed Scheduler App for Lighthouse Labs, tested with Jest && Cypress and ran on Webpack
+
+!["Home page"](https://github.com/wundeeh/scheduler/blob/master/docs/Screenshot%20from%202023-01-18%2015-52-02.png?raw=true)
+
+!["Schedule new interview"](https://github.com/wundeeh/scheduler/blob/master/docs/Screenshot%20from%202023-01-18%2015-52-27.png?raw=true)
+
+!["Home page with new interview"](https://github.com/wundeeh/scheduler/blob/master/docs/Screenshot%20from%202023-01-18%2015-52-40.png?raw=true)
+
+!["Delete an interview"](https://github.com/wundeeh/scheduler/blob/master/docs/Screenshot%20from%202023-01-18%2015-52-53.png?raw=true)

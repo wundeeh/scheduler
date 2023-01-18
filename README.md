@@ -21,3 +21,7 @@ npm test
 ```sh
 npm run storybook
 ```
+
+## Version 1.0
+
+This is the (hopefully) fully completed Scheduler App for Lighthouse Labs, tested with Jest && Cypress and ran on Webpack

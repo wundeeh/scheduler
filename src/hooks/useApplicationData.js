@@ -11,6 +11,7 @@ export default function useApplicationData() {
 
   const setDay = (day) => setState({ ...state, day });
 
+  // Adds/Removes a spot from a day when an interview is booked or canceled
   function updateSpots(appointments) {
     return state.days.map((day) => {
       let spotsForDay = 0;
@@ -23,6 +24,7 @@ export default function useApplicationData() {
     });
   }
 
+  // Books an interview
   function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
@@ -45,6 +47,7 @@ export default function useApplicationData() {
     });
   }
 
+  // Cancels an interview
   function cancelInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
@@ -67,6 +70,7 @@ export default function useApplicationData() {
     });
   }
 
+  // Gets the information from the database
   useEffect(() => {
     Promise.all([
       axios.get("/api/days"),

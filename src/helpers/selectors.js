@@ -1,3 +1,4 @@
+// Gets all interviews for a specified day
 export function getAppointmentsForDay(state, day) {
   const arr = [];
 
@@ -13,6 +14,7 @@ export function getAppointmentsForDay(state, day) {
   return arr;
 }
 
+// Gets an interview by the student and interviewer
 export function getInterview(state, interview) {
   const obj = {};
 
@@ -25,6 +27,7 @@ export function getInterview(state, interview) {
   return obj;
 }
 
+// Gets all interviewers for a specified day
 export function getInterviewersForDay(state, day) {
   const output = [];
   for (const elem of state.days) {

@@ -23,6 +23,7 @@ const ERROR_SAVING = "ERROR_SAVING";
 const ERROR_DELETING = "ERROR_DELETING";
 
 export default function Appointment(props) {
+  // Save interview information
   function save(name, interviewer) {
     const interview = {
       student: name,
@@ -34,7 +35,7 @@ export default function Appointment(props) {
       .then(() => transition(SHOW))
       .catch((error) => transition(ERROR_SAVING, true));
   }
-
+  // Cancel an interview
   function cancel(name, interviewer) {
     const interview = {
       student: name,
@@ -46,7 +47,7 @@ export default function Appointment(props) {
       .then(() => transition(EMPTY))
       .catch((error) => transition(ERROR_DELETING, true));
   }
-
+  // Shows an interview if it exists, otherwise shows empty
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
@@ -66,7 +67,7 @@ export default function Appointment(props) {
       {mode === CREATE && (
         <Form
           interviewers={props.interviewers}
-          onCancel={() => back()}
+          onCancel={back}
           onSave={save}
         />
       )}
@@ -75,7 +76,7 @@ export default function Appointment(props) {
           student={props.interview.student}
           interviewer={props.interview.interviewer.id}
           interviewers={props.interviewers}
-          onCancel={() => back()}
+          onCancel={back}
           onSave={save}
         />
       )}
@@ -89,10 +90,10 @@ export default function Appointment(props) {
       {mode === SAVING && <Status message="Saving" />}
       {mode === CANCEL && <Status message="Deleting" />}
       {mode === ERROR_SAVING && (
-        <Error message="Error saving!" onClose={() => back()} />
+        <Error message="Error saving!" onClose={back} />
       )}
       {mode === ERROR_DELETING && (
-        <Error message="Error deleting!" onClose={() => back()} />
+        <Error message="Error deleting!" onClose={() => transition(SHOW)} />
       )}
     </article>
   );
